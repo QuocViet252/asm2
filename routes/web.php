@@ -20,5 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/create-product','Product\CreateProductController@index');
-Route::post('/create-product','Product\CreateProductController@create');
+
+Route::get('product/list','Product\CreateProductController@index');
+Route::get('product/add','Product\CreateProductController@getCreate');
+Route::post('product/add','Product\CreateProductController@postCreate');
+
+Route::get('/profile','Profile\ProfileController@index');
+Route::post('/profile/update','Profile\ProfileController@update');
+
+Route::get('/list/cart','Cart\CartController@index');

@@ -16,7 +16,8 @@ class CreateProductController extends Controller
      */
     public function index()
     {
-        return view('web.create-product');
+        $product = MyProduct::all();
+        return view('web.list-product',compact('product'));
     }
 
     /**
@@ -24,24 +25,32 @@ class CreateProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function getCreate(){
+        return view('web.create-product');
+    }
+    public function postCreate(Request $request)
 
     {
-        $myProduct = new MyProduct;
-        $myProduct->name = $request->name;
-        $myProduct->id_user = Auth::user()->id;
-        $myProduct->price = $request->price;
-        $myProduct->menOrGirl = $request->sex;
+        $tbl_product = new MyProduct;
+        $tbl_product->name = $request->name;
+        $tbl_product->id_user = Auth::user()->id;
+        $tbl_product->price = $request->price;
+        $tbl_product->size = $request->size;
+        $tbl_product->qty = $request->qty;
         $fileImage = $request->avatar;
         if(!empty($fileImage)){
-            $myProduct->images = $fileImage->getClientOriginalName();
+            $tbl_product->images = $fileImage->getClientOriginalName();
+            // var_dump($fileImage-getClientOriginalName());
             
         }
-        if($myProduct->save()){
+        else{
+            return redirect('product/list')->with('success',__('You dont have images product'));
+        }
+        if($tbl_product->save()){
             if(!empty($fileImage)){
                 $fileImage->move('project_asset/images/',$fileImage->getClientOriginalName());
             }
-            return redirect()->back()->with('success',__('You have successfully created the product'));
+            return redirect('product/list')->with('success',__('You have successfully created the product'));
         }
         
     }

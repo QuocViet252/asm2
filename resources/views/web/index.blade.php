@@ -1,50 +1,59 @@
 @extends('layouts.auth')
 @section('content')
-<div id="wrap">
-    <div id="columns" class="columns_4">
-    @foreach($product as $value)
-        <figure>
-            <img src="{{asset('project_asset/images/'.$value->images)}}">
-            <figcaption>{{$value->name}}</figcaption>
-            <span class="price">${{$value->price}}</span>
-            <a class="button" href="#">Buy Now</a>
-        </figure>
-    @endforeach   
-        
-        
-        
+
+<div id="wrap cart-page">
+    <div class="title">
+        <h2>List Product</h2>
     </div>
-    <!-- Site footer -->
-    <!-- <footer class="site-footer">
-            <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                <h6>About</h6>
-                <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
-                </div>
+
+    <div class="banner-footer">
+        <video autoplay muted loop id="video-footer">
+            <source src="https://content.rolex.com/dam/watches/hubs/all-watches/videos/hub-collection-watches-cover.mp4"
+                type="video/mp4">
+        </video>
+        <div class="slider-cart">
+
+            <div class="slides-cart">
+                <figure>
+                    <img src="{{asset('project_asset/images/rolex.jpg')}}">
+                    <figcaption style="color: white">Rolex</figcaption>
+                    <figcaption style="color: white">$45</figcaption>
+                    <a class="addCart" href="#">Add To Cart</a>
+
+                </figure>
+                <figure>
+                    <img src="{{asset('project_asset/images/rolex.jpg')}}">
+                    <figcaption style="color: white">Rolex</figcaption>
+                    <figcaption style="color: white">$45</figcaption>
+                    <a class="addCart" href="#">Add To Cart</a>
+
+                </figure>
+                <figure>
+                    <img src="{{asset('project_asset/images/rolex.jpg')}}">
+                    <figcaption style="color: white">Rolex</figcaption>
+                    <figcaption style="color: white">$45</figcaption>
+                    <a class="addCart" href="#">Add To Cart</a>
+
+                </figure>
+                <figure>
+                    <img src="{{asset('project_asset/images/rolex.jpg')}}">
+                    <figcaption style="color: white">Rolex</figcaption>
+                    <figcaption style="color: white">$45</figcaption>
+                    <a class="addCart" href="#">Add To Cart</a>
+
+                </figure>
+                <figure>
+                    <img src="{{asset('project_asset/images/rolex.jpg')}}">
+                    <figcaption style="color: white">Rolex</figcaption>
+                    <figcaption style="color: white">$45</figcaption>
+                    <a class="addCart" href="#">Add To Cart</a>
+
+                </figure>
 
             </div>
-            <hr>
-            </div>
-            <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
-                <a href="#">Scanfcode</a>.
-                </p>
-                </div>
-
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                <ul class="social-icons">
-                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
-                </ul>
-                </div>
-            </div>
-            </div>
-    </footer> -->
+        </div>
+    </div>
 
 </div>
+
 @endsection

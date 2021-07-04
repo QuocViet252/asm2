@@ -18,7 +18,8 @@ class CreateMyproductTable extends Migration
             $table->string('id_user');
             $table->string('name');
             $table->string('price');
-            $table->string('menOrGirl');
+            $table->string('size');
+            $table->string('qty');
             $table->string('images');
             $table->timestamps();
         });
